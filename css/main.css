@@ -1,9 +1,15 @@
+header {
+    height: 100%;
+}
+
 body {
     font-family: "Kaushan Script", cursive;
+    margin: 0;
 }
 
 #banner {
-    background-image: url("../images/headerBcg.jpeg");
+    min-height: calc(100vh - 76px);
+    background: linear-gradient(rgb(249, 228, 148), rgb(249, 228, 148)), url("../images/headerBcg.jpeg") center fixed no-repeat;
 }
 
 .top-toolbar {
