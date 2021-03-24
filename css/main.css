@@ -1,3 +1,32 @@
+.explore-btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    max-width: fit-content;
+    font-size: 1.5em;
+    color: black;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.explore-btn:hover {
+    color: #ef7998;
+    background-color: black;
+}
+
+.welcome-heading {
+    text-align: center;
+}
+
+.welcome-heading h1 {
+    color: white;
+}
+
+.welcome-heading span {
+    font-size: 1.8em;
+    color: #ef7998;
+}
+
+
 header {
     height: 100%;
 }
@@ -7,10 +36,13 @@ body {
     margin: 0;
 }
 
-#banner {
+.banner {
     min-height: calc(100vh - 76px);
     background: linear-gradient(rgb(249, 228, 148, 0.5), rgb(249, 228, 148, 0.5)),
                 url("../images/headerBcg.jpeg") center/cover fixed no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .top-toolbar {
