@@ -37,7 +37,7 @@ body {
 }
 
 .banner {
-    min-height: calc(100vh - 76px);
+    min-height: calc(100vh - 55px);
     background: linear-gradient(rgb(249, 228, 148, 0.5), rgb(249, 228, 148, 0.5)),
                 url("../images/headerBcg.jpeg") center/cover fixed no-repeat;
     display: flex;
