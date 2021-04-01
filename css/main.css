@@ -156,10 +156,6 @@ nav a:hover {
     flex: 0 0 50%;
 }
 
-cookies-img-box {
-    flex: 0 0 50%;
-}
-
 .about-us-heading p {
     width: 75%;
     color: gray;
@@ -234,3 +230,33 @@ transition: all 1s ease-in-out;
     color: #ef7998;
     background-color: black;
 }
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    width: 60%
+}
+.search-bar label {
+    display: none;
+}
+
+.icon-box {
+    width: 1rem;
+    display: inline-block;
+    padding: 0.2rem 0.4rem 0 0.4rem;
+    background-color: #ef7998;
+}
+
+.icon-box img {
+    width: 100%;
+}
+
+#search-input {
+    height: 100%;
+    box-sizing: border-box;
+    border: 0;
+    width: 60%;
+    font-family: "Kaushan Script", cursive;
+}
+
+/*TODO: set font of search bar*/
