@@ -184,7 +184,7 @@ cookies-img-box {
     outline: 10px solid #ef7998;
     top: -1.7rem;
     left: -1.7rem;
-    transition: all 1s ease-in-out;
+transition: all 1s ease-in-out;
 }
 
 .cookies-img-box:hover::before {
@@ -207,10 +207,30 @@ cookies-img-box {
 }
 
 .store-sec-row {
-    display flex;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.store-sec-row .filter-btn-row {
+.filter-btn-row {
+    width: 60%;
+    padding: 20px 0;
+    display: flex;
     justify-content: space-between;
+}
+
+.filter-btn-row a {
+    text-decoration: none;
+}
+
+.filter-btn {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: black;
+}
+
+.filter-btn:hover {
+    color: #ef7998;
+    background-color: black;
 }
