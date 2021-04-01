@@ -147,6 +147,7 @@ nav a:hover {
 
 .about-us-row {
     margin-top: 4rem;
+    margin-bottom: 4rem;
     max-width: 1140px;
     display: flex;
 }
