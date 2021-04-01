@@ -190,3 +190,26 @@ cookies-img-box {
     top: 0;
     left: 0;
 }
+
+.store-sec {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(238, 238, 238);
+}
+
+.store-sec-container {
+    width: 960px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+}
+
+.store-sec-row {
+    display flex;
+    flex-wrap: wrap;
+}
+
+.store-sec-row .filter-btn-row {
+    justify-content: space-between;
+}
