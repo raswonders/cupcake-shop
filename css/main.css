@@ -260,3 +260,30 @@ transition: all 1s ease-in-out;
     width: 100%;
     font-family: "Kaushan Script", cursive;
 }
+
+.store-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.shopping-item {
+    flex: 0 0 33.333%;
+    display: block;
+}
+
+.shopping-item-img {
+    width: 100%;
+    font-size: 0;
+}
+
+.shopping-item-img img {
+    width: inherit;
+    object-fit: cover;
+}
+
+.shopping-item-price-tag {
+    width: inherit;
+    height: 3rem;
+    background-color: white;
+}
