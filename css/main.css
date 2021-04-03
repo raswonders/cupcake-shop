@@ -217,7 +217,7 @@ transition: all 1s ease-in-out;
     padding: 20px 0;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .filter-btn-row a {
@@ -230,6 +230,7 @@ transition: all 1s ease-in-out;
     padding: 5px 10px;
     color: black;
     max-width: fit-content;
+    margin-left: 1rem;
 }
 
 .filter-btn:hover {
