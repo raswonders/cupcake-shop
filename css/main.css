@@ -156,6 +156,10 @@ nav a:hover {
     flex: 0 0 50%;
 }
 
+.about-us-heading a {
+    text-decoration: none;
+}
+
 .about-us-heading p {
     width: 75%;
     color: gray;
@@ -199,7 +203,7 @@ transition: all 1s ease-in-out;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid black;
+    /*border: 2px solid black;*/
 }
 
 .store-sec-row {
@@ -212,6 +216,7 @@ transition: all 1s ease-in-out;
     width: 60%;
     padding: 20px 0;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
 }
 
@@ -224,6 +229,7 @@ transition: all 1s ease-in-out;
     border-radius: 5px;
     padding: 5px 10px;
     color: black;
+    max-width: fit-content;
 }
 
 .filter-btn:hover {
@@ -262,14 +268,18 @@ transition: all 1s ease-in-out;
 }
 
 .store-items {
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /*justify-content: center;*/
 }
 
 .shopping-item {
-    flex: 0 0 33.333%;
+    flex: 0 0 calc(33% - 2rem);
     display: block;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 1rem;
 }
 
 .shopping-item-img {
@@ -285,5 +295,12 @@ transition: all 1s ease-in-out;
 .shopping-item-price-tag {
     width: inherit;
     height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: white;
+}
+.shopping-item-price-tag span {
+    padding: 15px;
+    font-size: 1.2rem;
 }
