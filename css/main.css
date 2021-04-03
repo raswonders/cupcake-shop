@@ -189,7 +189,7 @@ nav a:hover {
     outline: 10px solid #ef7998;
     top: -1.7rem;
     left: -1.7rem;
-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 .cookies-img-box:hover::before {
@@ -292,6 +292,7 @@ transition: all 1s ease-in-out;
     width: 100%;
     font-size: 0;
     overflow: hidden;
+    position: relative;
 }
 
 .shopping-item-img img {
@@ -302,6 +303,30 @@ transition: all 1s ease-in-out;
 
 .shopping-item-img:hover img {
     transform: scale(1.5);
+}
+
+.shopping-item-img:hover::before {
+    right: 0;
+    bottom: 0;
+}
+
+.shopping-item-img::before {
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/basket.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ef7998;
+    background-size: 50%;
+    border-top-left-radius: 35%;
+    position: absolute;
+    /*content: url("../images/basket.svg");*/
+    content: "";
+    display: block;
+    right: -40px;
+    bottom: -40px;
+    z-index: 1;
+    transition: all .5s ease-in-out;
 }
 
 .shopping-item-price-tag {
