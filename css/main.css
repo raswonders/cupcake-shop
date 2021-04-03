@@ -291,11 +291,17 @@ transition: all 1s ease-in-out;
 .shopping-item-img {
     width: 100%;
     font-size: 0;
+    overflow: hidden;
 }
 
 .shopping-item-img img {
     width: inherit;
     object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.shopping-item-img:hover img {
+    transform: scale(1.5);
 }
 
 .shopping-item-price-tag {
