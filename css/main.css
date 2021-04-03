@@ -50,6 +50,11 @@ body {
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
+    margin: 0.5rem;
+}
+
+.top-toolbar > a {
+    font-size: 0;
 }
 
 .icon {
