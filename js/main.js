@@ -4,13 +4,16 @@ const shoppingItems = Array.from(document.querySelectorAll(".shopping-item"));
 // adds listeners for filter buttons
 filterBtns.forEach(function(el) {
     el.addEventListener('click', function(event) {
-        filterShoppingItems(el.dataset.itemName);
+        // passes regexp because search bar using regexp
+        let itemNameRegExp = new RegExp(el.dataset.itemName);
+        filterShoppingItems(itemNameRegExp);
+
     })
 })
 
-function filterShoppingItems(itemName) {
+function filterShoppingItems(regex) {
     shoppingItems.forEach(function(el) {
-        if (itemName == "all" || itemName == el.querySelector(".item-name").textContent) {
+        if ( regex.test("all") || regex.test(el.querySelector(".item-name").textContent)) {
             el.hidden = false
         } else {
             el.hidden = true
