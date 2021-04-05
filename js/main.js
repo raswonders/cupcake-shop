@@ -10,7 +10,7 @@ filterBtns.forEach(function(el) {
 
 function filterShoppingItems(itemName) {
     shoppingItems.forEach(function(el) {
-        if (itemName == "all" || itemName == el.dataset.itemName) {
+        if (itemName == "all" || itemName == el.querySelector(".item-name").textContent) {
             el.hidden = false
         } else {
             el.hidden = true
