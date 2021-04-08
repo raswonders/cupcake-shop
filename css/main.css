@@ -53,10 +53,6 @@ body {
     margin: 0.5rem;
 }
 
-.top-toolbar > a {
-    font-size: 0;
-}
-
 .icon {
     width: 20px;
     height: 20px;
@@ -70,7 +66,6 @@ body {
     padding: 8px;
     color: black;
     margin-right: 2em;
-    /*flex-grow: 0;*/
 }
 
 header a {
@@ -344,4 +339,8 @@ nav a:hover {
 .shopping-item-price-tag span {
     padding: 15px;
     font-size: 1.2rem;
+}
+
+button:hover {
+    cursor: pointer;
 }
