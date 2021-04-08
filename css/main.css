@@ -254,11 +254,16 @@ nav a:hover {
 }
 
 .icon-box {
-    width: 1rem;
-    height: 1rem;
+    box-sizing: border-box;
+    width: 2rem;
+    height: 2rem;
     display: inline-block;
-    padding: 7px;
     background-color: #ef7998;
+    background-image: url("../images/glass.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    border: 0;
 }
 
 .icon-box img {

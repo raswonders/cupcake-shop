@@ -1,6 +1,6 @@
 const filterBtns = Array.from(document.querySelectorAll(".filter-btn-row .filter-btn"))
 const shoppingItems = Array.from(document.querySelectorAll(".shopping-item"))
-const searchBtn = document.querySelector(".search-bar .icon-box")
+const searchBarBtn = document.querySelector("form.search-bar")
 const searchBar = document.getElementById("search-input")
 
 // adds listeners for filter buttons
@@ -13,8 +13,9 @@ filterBtns.forEach(function(el) {
 })
 
 // adds listener for searchBtn
-searchBtn.addEventListener('click', function(event) {
+searchBarBtn.addEventListener('submit', function(event) {
     filterShoppingItems(searchBarGetRegex())
+    event.preventDefault()
 })
 
 function searchBarGetRegex() {
