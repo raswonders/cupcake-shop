@@ -1,3 +1,7 @@
+h1 {
+    font-size: 2rem;
+}
+
 .explore-btn {
     border: 2px solid black;
     border-radius: 5px;
@@ -271,6 +275,7 @@ nav a:hover {
     border: 0;
     width: 100%;
     font-family: "Kaushan Script", cursive;
+    font-size: 1rem;
 }
 
 .store-items {
