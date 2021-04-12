@@ -25,8 +25,8 @@ const modalCrossIcon = document.querySelector('.modal-control-bar .modal-icon')
 const modalSection = document.querySelector('.modal-section')
 const shoppingItemImages = Array.from(document.querySelectorAll('.shopping-item-img img'))
 
-modalSliderIcons.forEach(function(icon) {
-    icon.addEventListener('click', function(e) {
+modalSliderIcons.forEach(function (icon) {
+    icon.addEventListener('click', function (e) {
         if (e.target.classList.contains('left')) {
             index--;
         } else if (e.target.classList.contains('right')) {
@@ -35,7 +35,7 @@ modalSliderIcons.forEach(function(icon) {
 
         if (index < 0) {
             index = images.length - 1
-        } else if ( index >= images.length ) {
+        } else if (index >= images.length) {
             index = 0
         }
 
@@ -44,12 +44,30 @@ modalSliderIcons.forEach(function(icon) {
     })
 })
 
-modalCrossIcon.addEventListener('click', function(e) {
+modalCrossIcon.addEventListener('click', function (e) {
     modalSection.style.display = 'none'
     e.preventDefault()
 })
 
+shoppingItemImages.forEach(function(shopItem) {
+    shopItem.addEventListener('click', function (e) {
+        let url = e.target.src
+        let filename = url.substring(url.lastIndexOf('/') + 1)
 
+        images.some(function(img, i) {
+            index = i;
+            return img.src.includes(filename)
+        })
+
+        updateModal()
+        turnOnModal()
+        e.preventDefault()
+    })
+})
+
+function turnOnModal() {
+    modalSection.style.display = 'flex'
+}
 
 function updateModal() {
     let imgView = document.querySelector('.img-view')
