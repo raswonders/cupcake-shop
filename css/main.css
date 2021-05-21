@@ -50,11 +50,51 @@ body {
 }
 
 .top-toolbar {
+    position: relative;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
     margin: 0.5rem;
+}
+
+.cart-outer-box {
+    position: absolute;
+    width: 250px;
+    top: calc(100% + 0.5rem);
+    right: -0.5rem;
+    border: 1px solid black;
+    background-color: yellow;
+}
+
+.cart-inner-box {
+    width: 90%;
+    margin: auto;
+}
+
+.cart-items {
+}
+
+.cart-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cart-btns {
+    display: flex;
+    justify-content: space-between;
 }
 
 .icon {
@@ -349,3 +389,4 @@ nav a:hover {
 button:hover {
     cursor: pointer;
 }
+
