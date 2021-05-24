@@ -44,6 +44,10 @@ body {
     margin: 0;
 }
 
+body * {
+    font-family: inherit;
+}
+
 .banner {
     min-height: calc(100vh - 55px);
     background: linear-gradient(rgba(249, 228, 148, 0.5), rgba(249, 228, 148, 0.5)),
