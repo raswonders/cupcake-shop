@@ -342,8 +342,6 @@ nav a:hover {
 
 .shopping-item {
     flex: 0 0 calc(33% - 2rem);
-    border: 1px solid gray;
-    border-radius: 5px;
     margin: 1rem;
 }
 
@@ -389,12 +387,14 @@ nav a:hover {
 }
 
 .shopping-item-price-tag {
-    width: inherit;
+    width: 100%;
     height: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .shopping-item-price-tag span {
     padding: 15px;
@@ -414,7 +414,7 @@ button:hover {
     top: 0;
     left: 0;
     z-index: 1;
-    background-color: rgba(0,0,0);
+    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.3);
 }
 
