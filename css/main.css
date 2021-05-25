@@ -94,7 +94,7 @@ body * {
     margin-top: 10px;
 }
 
-.cart-total {
+.cart-total-box {
     margin: 5% 0;
     display: flex;
     justify-content: space-around;
