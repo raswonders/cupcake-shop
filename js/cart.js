@@ -2,7 +2,7 @@ const cartBtn = document.querySelector('.basket-preview')
 const cart = document.querySelector('.cart-outer-box')
 const clearBtn = document.querySelector('.cart-btns').children[0]
 const checkoutBtn = document.querySelector('.cart-btns').children[1]
-const cartItemsList = Array.from(document.querySelector('.cart-items').children)
+const cartItemsList = document.querySelector('.cart-items')
 const cartPreviewContent = document.querySelector('.cart-preview-content')
 const cartTotal = document.querySelector('.cart-total')
 
@@ -17,10 +17,16 @@ cartBtn.addEventListener('click', function cartSwitch(e) {
 function updateTotal() {
         var sum = 0;
         // count items and total
-        cartItemsList.forEach(function addToSum(el) {
+        let items = Array.from(cartItemsList.children)
+        items.forEach(function addToSum(el) {
                sum += Number(el.querySelector('.price').innerText.match(/\d+/)[0])
         })
         // update overview btn and total in cart
-        cartPreviewContent.innerHTML = `${cartItemsList.length} Item(s) - $${sum}`
+        cartPreviewContent.innerHTML = `${items.length} Item(s) - $${sum}`
         cartTotal.innerHTML = `$${sum}`
 }
+
+function removeItem(node) {
+    cartItemsList.removeChild(node.closest('li'))
+}
+
