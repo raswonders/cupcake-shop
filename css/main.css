@@ -51,7 +51,7 @@ body * {
 .banner {
     min-height: calc(100vh - 55px);
     background: linear-gradient(rgba(249, 228, 148, 0.5), rgba(249, 228, 148, 0.5)),
-                url("../images/headerBcg.jpeg") center/cover fixed no-repeat;
+    url("../images/headerBcg.jpeg") center/cover fixed no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,7 +155,6 @@ li {
 }
 
 
-
 .phone-contact,
 .basket-preview {
     display: inline;
@@ -186,20 +185,20 @@ nav a:hover {
 }
 
 @font-face {
-  font-family: 'Kaushan Script';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/kaushanscript/v9/vm8vdRfvXFLG3OLnsO15WYS5DG72wNJHMw.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-family: 'Kaushan Script';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/kaushanscript/v9/vm8vdRfvXFLG3OLnsO15WYS5DG72wNJHMw.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* latin */
 @font-face {
-  font-family: 'Kaushan Script';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/kaushanscript/v9/vm8vdRfvXFLG3OLnsO15WYS5DG74wNI.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: 'Kaushan Script';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/kaushanscript/v9/vm8vdRfvXFLG3OLnsO15WYS5DG74wNI.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 .about-us-sec {
@@ -307,6 +306,7 @@ nav a:hover {
     width: 50%;
     border: 1px solid grey;
 }
+
 .search-bar label {
     display: none;
 }
@@ -346,6 +346,7 @@ nav a:hover {
 
 .shopping-item {
     flex: 0 0 calc(33% - 2rem);
+    position: relative;
     margin: 1rem;
 }
 
@@ -366,28 +367,26 @@ nav a:hover {
     transform: scale(1.5);
 }
 
-.shopping-item-img:hover::before {
-    right: 0;
-    bottom: 0;
+.shopping-item-img:hover .shopping-item-cart {
+    transform: translate(0, 0);
 }
 
-.shopping-item-img::before {
-    width: 40px;
-    height: 40px;
-    background-image: url("../images/basket.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: var(--main-pink-color);
-    background-size: 50%;
-    border-top-left-radius: 35%;
+.shopping-item-cart {
+    width: fit-content;
     position: absolute;
-    /*content: url("../images/basket.svg");*/
-    content: "";
-    display: block;
-    right: -40px;
-    bottom: -40px;
-    z-index: 1;
+    font-size: 1rem;
+    color: black;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    background-color: var(--main-pink-color);
+    bottom: 0;
+    right: 0;
+    transform: translate(100%, 100%);
     transition: all .5s ease-in-out;
+}
+
+a:hover .shopping-item-cart {
+    color: white;
 }
 
 .shopping-item-price-tag {
@@ -400,6 +399,7 @@ nav a:hover {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 .shopping-item-price-tag span {
     padding: 15px;
     font-size: 1.2rem;
@@ -418,8 +418,8 @@ button:hover {
     top: 0;
     left: 0;
     z-index: 1;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .modal-box {
@@ -439,6 +439,7 @@ button:hover {
     display: flex;
     align-items: center;
 }
+
 .modal-icon {
     width: 35px;
     padding: 10px;
