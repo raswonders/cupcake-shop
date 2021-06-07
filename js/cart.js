@@ -9,6 +9,7 @@ const cartBtns = document.querySelectorAll('.shopping-item-cart')
 
 clearBtn.addEventListener('click', function clearCart(e) {
     cartItemsList.innerHTML = ""
+    updateTotal()
 })
 
 cartPreview.addEventListener('click', function cartSwitch(e) {
