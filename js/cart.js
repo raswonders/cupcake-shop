@@ -1,16 +1,17 @@
-const cartBtn = document.querySelector('.basket-preview')
+const cartPreview = document.querySelector('.basket-preview')
 const cart = document.querySelector('.cart-outer-box')
 const clearBtn = document.querySelector('.cart-btns').children[0]
 const checkoutBtn = document.querySelector('.cart-btns').children[1]
 const cartItemsList = document.querySelector('.cart-items')
 const cartPreviewContent = document.querySelector('.cart-preview-content')
 const cartTotal = document.querySelector('.cart-total')
+const cartBtns = document.querySelectorAll('.shopping-item-cart')
 
 clearBtn.addEventListener('click', function clearCart(e) {
     cartItemsList.innerHTML = ""
 })
 
-cartBtn.addEventListener('click', function cartSwitch(e) {
+cartPreview.addEventListener('click', function cartSwitch(e) {
         cart.classList.toggle('hide')
 })
 
@@ -30,3 +31,19 @@ function removeItem(node) {
     cartItemsList.removeChild(node.closest('li'))
 }
 
+for (let btn of cartBtns) {
+    btn.addEventListener('click', function addItem(e) {
+        e.preventDefault()
+        let imgElem = btn.closest('.shopping-item-img')
+        let imgLink = imgElem.querySelector('img').src
+        let shopItemElem = btn.closest('.shopping-item')
+        let itemName = shopItemElem.querySelector('.item-name').textContent
+        let itemPrice = shopItemElem.querySelector('.price').textContent
+        cartItemsList.insertAdjacentHTML('beforeend', createItem(imgLink, itemName, itemPrice))
+        updateTotal()
+    })
+}
+
+function createItem(img, name, price) {
+    return `<li class="cart-item"><img class="cart-img" src="${img}"><div>${name}<br><span class="price">${price}</span></div><a class="trash" href="#"><i class="fa fa-trash"></i></a></li>`
+}
