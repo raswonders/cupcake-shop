@@ -28,10 +28,6 @@ function updateTotal() {
         cartTotal.innerHTML = `$${sum}`
 }
 
-function removeItem(node) {
-    cartItemsList.removeChild(node.closest('li'))
-}
-
 for (let btn of cartBtns) {
     btn.addEventListener('click', function addItem(e) {
         e.preventDefault()
@@ -42,7 +38,16 @@ for (let btn of cartBtns) {
         let itemPrice = shopItemElem.querySelector('.price').textContent
         cartItemsList.insertAdjacentHTML('beforeend', createItem(imgLink, itemName, itemPrice))
         updateTotal()
+        addRemoveItemListeners()
     })
+}
+
+function addRemoveItemListeners() {
+    for (let item of cartItemsList.children) {
+        item.querySelector('.trash').addEventListener('click', function removeItem(e) {
+            cartItemsList.removeChild(e.target.closest('li'))
+        })
+    }
 }
 
 function createItem(img, name, price) {
