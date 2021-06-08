@@ -12,12 +12,15 @@ var saved = localStorage.getItem('cart')
 if (saved) {
     cartItemsList.innerHTML = saved
     addRemoveItemListeners(cartItemsList.children)
+} else {
+    cart.classList.add('hide')
 }
 updateTotal()
 
 clearBtn.addEventListener('click', function clearCart(e) {
     cartItemsList.innerHTML = ""
     updateTotal()
+    saveCartToStorage()
 })
 
 cartPreview.addEventListener('click', function cartSwitch(e) {
