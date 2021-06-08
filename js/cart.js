@@ -7,6 +7,14 @@ const cartPreviewContent = document.querySelector('.cart-preview-content')
 const cartTotal = document.querySelector('.cart-total')
 const cartBtns = document.querySelectorAll('.shopping-item-cart')
 
+// cart initialization
+var saved = localStorage.getItem('cart')
+if (saved) {
+    cartItemsList.innerHTML = saved
+    addRemoveItemListeners(cartItemsList.children)
+}
+updateTotal()
+
 clearBtn.addEventListener('click', function clearCart(e) {
     cartItemsList.innerHTML = ""
     updateTotal()
@@ -38,16 +46,32 @@ for (let btn of cartBtns) {
         let itemPrice = shopItemElem.querySelector('.price').textContent
         cartItemsList.insertAdjacentHTML('beforeend', createItem(imgLink, itemName, itemPrice))
         updateTotal()
+        saveCartToStorage()
 
         // Attach removeItem handler to trash icon of newly added item
         let addedItem = cartItemsList.lastElementChild
-        addedItem.querySelector('.trash').addEventListener('click', function removeItem(e) {
-            cartItemsList.removeChild(addedItem)
-            updateTotal()
-        })
+        addRemoveItemListener(addedItem)
     })
 }
 
 function createItem(img, name, price) {
     return `<li class="cart-item"><img class="cart-img" src="${img}"><div>${name}<br><span class="price">${price}</span></div><a class="trash" href="#"><i class="fa fa-trash"></i></a></li>`
+}
+
+function addRemoveItemListener(node) {
+    node.querySelector('.trash').addEventListener('click', function removeItem(e) {
+        cartItemsList.removeChild(node)
+        updateTotal()
+        saveCartToStorage()
+    })
+}
+
+function addRemoveItemListeners(items) {
+    for (let i of items) {
+        addRemoveItemListener(i)
+    }
+}
+
+function saveCartToStorage() {
+    localStorage.setItem('cart', cartItemsList.innerHTML)
 }
