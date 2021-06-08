@@ -13,23 +13,19 @@ clearBtn.addEventListener('click', function clearCart(e) {
 })
 
 cartPreview.addEventListener('click', function cartSwitch(e) {
-        cart.classList.toggle('hide')
+    cart.classList.toggle('hide')
 })
 
 function updateTotal() {
-        var sum = 0;
-        // count items and total
-        let items = Array.from(cartItemsList.children)
-        items.forEach(function addToSum(el) {
-               sum += Number(el.querySelector('.price').innerText.match(/\d+/)[0])
-        })
-        // update overview btn and total in cart
-        cartPreviewContent.innerHTML = `${items.length} Item(s) - $${sum}`
-        cartTotal.innerHTML = `$${sum}`
-}
-
-function removeItem(node) {
-    cartItemsList.removeChild(node.closest('li'))
+    var sum = 0;
+    // count items and total
+    let items = Array.from(cartItemsList.children)
+    items.forEach(function addToSum(el) {
+        sum += Number(el.querySelector('.price').innerText.match(/\d+/)[0])
+    })
+    // update overview btn and total in cart
+    cartPreviewContent.innerHTML = `${items.length} Item(s) - $${sum}`
+    cartTotal.innerHTML = `$${sum}`
 }
 
 for (let btn of cartBtns) {
@@ -42,6 +38,13 @@ for (let btn of cartBtns) {
         let itemPrice = shopItemElem.querySelector('.price').textContent
         cartItemsList.insertAdjacentHTML('beforeend', createItem(imgLink, itemName, itemPrice))
         updateTotal()
+
+        // Attach removeItem handler to trash icon of newly added item
+        let addedItem = cartItemsList.lastElementChild
+        addedItem.querySelector('.trash').addEventListener('click', function removeItem(e) {
+            cartItemsList.removeChild(addedItem)
+            updateTotal()
+        })
     })
 }
 
