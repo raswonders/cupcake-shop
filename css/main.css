@@ -3,7 +3,7 @@
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .explore-btn {
@@ -21,16 +21,19 @@ h1 {
     background-color: black;
 }
 
-.welcome-heading {
+.welcome-heading-box {
     text-align: center;
 }
 
-.welcome-heading h1 {
+.welcome-heading {
+    font-size: 4rem;
+}
+
+.welcome-heading-box h1 {
     color: white;
 }
 
-.heading-strong {
-    font-size: 1.8em;
+.pink {
     color: var(--main-pink-color);
 }
 
