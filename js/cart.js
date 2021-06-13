@@ -1,5 +1,7 @@
 const cartPreview = document.querySelector('.basket-preview')
 const cartBtn = document.querySelector('.cart-btn')
+const barsBtn = document.querySelector('.bars-btn')
+const toolbarMenu = document.querySelector('.inline-menu')
 const cart = document.querySelector('.cart-outer-box')
 const clearBtn = document.querySelector('.cart-btns').children[0]
 const checkoutBtn = document.querySelector('.cart-btns').children[1]
@@ -31,6 +33,11 @@ cartPreview.addEventListener('click', function cartSwitch(e) {
 cartBtn.addEventListener('click', function cartSwitch(e) {
     cart.classList.toggle('hide')
 })
+
+barsBtn.addEventListener('click', function menuSwitch(e) {
+    toolbarMenu.classList.toggle('show')
+})
+
 
 
 function updateTotal() {
