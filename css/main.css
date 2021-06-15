@@ -122,7 +122,6 @@ body * {
     border-radius: 5px;
     padding: 8px;
     color: black;
-    margin-right: 2em;
 }
 
 header a {
@@ -147,7 +146,6 @@ li {
 .phone-contact,
 .basket-preview {
     display: none;
-    margin-right: 2em;
 }
 
 .phone-icon {
