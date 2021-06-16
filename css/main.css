@@ -321,6 +321,13 @@ li {
     font-size: 1rem;
 }
 
+.store-items {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+}
+
 .shopping-item {
     /*flex: 0 0 calc(33% - 2rem);*/
     position: relative;
