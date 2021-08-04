@@ -1,3 +1,5 @@
+var lastActiveEl
+
 class ImgRef {
     constructor(src, alt) {
         this.src = src;
@@ -45,7 +47,7 @@ modalSliderIcons.forEach(function (icon) {
 })
 
 modalCrossIcon.addEventListener('click', function (e) {
-    modalSection.style.display = 'none'
+    hideModal()
     e.preventDefault()
 })
 
@@ -60,13 +62,19 @@ shoppingItemImages.forEach(function(shopItem) {
         })
 
         updateModal()
-        turnOnModal()
+        showModal()
         e.preventDefault()
     })
 })
 
-function turnOnModal() {
+function showModal() {
+    lastActiveEl = document.activeElement
     modalSection.style.display = 'flex'
+}
+
+function hideModal() {
+    modalSection.style.display = 'none'
+    lastActiveEl.focus()
 }
 
 function updateModal() {
