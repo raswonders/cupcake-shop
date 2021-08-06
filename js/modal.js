@@ -22,16 +22,16 @@ images.push(new ImgRef('images/sweets-2.jpeg', 'gummy sweets'))
 images.push(new ImgRef('images/sweets-3.jpeg', 'chocolate sweets'))
 
 let index = 0
-const modalSliderIcons = Array.from(document.querySelectorAll('.modal-img-slider .modal-icon'))
-const modalCrossIcon = document.querySelector('.modal-control-bar .modal-icon')
-const modalSection = document.querySelector('.modal-section')
+const modalSliderIcons = Array.from(document.querySelectorAll('.modal-img-slider .modal-btn'))
+const modalCrossIcon = document.querySelector('.modal-btn-cross')
+const modalSection = document.querySelector('.modal')
 const shoppingItemImages = Array.from(document.querySelectorAll('.shopping-item-img img'))
 
 modalSliderIcons.forEach(function (icon) {
     icon.addEventListener('click', function (e) {
-        if (e.target.classList.contains('left')) {
+        if (e.target.classList.contains('modal-btn-left')) {
             index--;
-        } else if (e.target.classList.contains('right')) {
+        } else if (e.target.classList.contains('modal-btn-right')) {
             index++;
         }
 
@@ -70,6 +70,7 @@ shoppingItemImages.forEach(function(shopItem) {
 function showModal() {
     lastActiveEl = document.activeElement
     modalSection.style.display = 'flex'
+    modalSection.focus()
 }
 
 function hideModal() {
