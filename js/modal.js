@@ -1,4 +1,4 @@
-var lastActiveEl
+
 
 class ImgRef {
     constructor(src, alt) {
@@ -22,10 +22,13 @@ images.push(new ImgRef('images/sweets-2.jpeg', 'gummy sweets'))
 images.push(new ImgRef('images/sweets-3.jpeg', 'chocolate sweets'))
 
 let index = 0
+var lastActiveEl
 const modalSliderIcons = Array.from(document.querySelectorAll('.modal-img-slider .modal-btn'))
 const modalCrossIcon = document.querySelector('.modal-btn-cross')
 const modalSection = document.querySelector('.modal')
 const shoppingItemImages = Array.from(document.querySelectorAll('.shopping-item-img img'))
+var focusable = 'a[href], area[href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable], audio[controls], video[controls], summary, [tabindex^="0"], [tabindex^="1"], [tabindex^="2"], [tabindex^="3"], [tabindex^="4"], [tabindex^="5"], [tabindex^="6"], [tabindex^="7"], [tabindex^="8"], [tabindex^="9"]'
+const focusableModal = Array.from(modalSection.querySelectorAll(focusable));
 
 modalSliderIcons.forEach(function (icon) {
     icon.addEventListener('click', function (e) {
@@ -51,12 +54,12 @@ modalCrossIcon.addEventListener('click', function (e) {
     e.preventDefault()
 })
 
-shoppingItemImages.forEach(function(shopItem) {
+shoppingItemImages.forEach(function (shopItem) {
     shopItem.addEventListener('click', function (e) {
         let url = e.target.src
         let filename = url.substring(url.lastIndexOf('/') + 1)
 
-        images.some(function(img, i) {
+        images.some(function (img, i) {
             index = i;
             return img.src.includes(filename)
         })
@@ -70,7 +73,7 @@ shoppingItemImages.forEach(function(shopItem) {
 function showModal() {
     lastActiveEl = document.activeElement
     modalSection.style.display = 'flex'
-    modalSection.focus()
+    focusableModal[focusableModal.length - 1].focus()
 }
 
 function hideModal() {
@@ -78,8 +81,34 @@ function hideModal() {
     lastActiveEl.focus()
 }
 
+function modalVisible() {
+    return !(modalSection.style.display === 'none')
+}
+
 function updateModal() {
     let imgView = document.querySelector('.img-view')
     imgView.src = images[index].src
     imgView.alt = images[index].alt
 }
+
+window.addEventListener('keydown', (e) => {
+    if (modalVisible()) {
+        let current = document.activeElement
+        let index = focusableModal.indexOf(current)
+        let len = focusableModal.length
+        key = e.keyCode || e.which
+        if (key === 9) {
+            if (e.shiftKey) {
+                if (index == 0) index = 1
+                else index -= 1
+            }
+            else {
+                if (index == len - 1) index = 0
+                else index += 1 
+            }
+
+            focusableModal[index].focus()
+            e.preventDefault()
+        }
+    }
+})
