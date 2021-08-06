@@ -448,7 +448,7 @@ button:hover {
     user-select: none;
 }
 
-.modal-btn:focus {
+.modal-btn:focus-visible {
     border: 2px black solid;
     border-radius: 5px;
 }
